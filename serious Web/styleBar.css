@@ -1,0 +1,436 @@
+.slidebar::-webkit-scrollbar {
+    width:9px;
+  padding-right:15px;
+}
+
+.slidebar::-webkit-scrollbar-track {
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    background:rgba(5, 5, 5, 0.1);
+   padding-right:15px;
+}
+
+.slidebar::-webkit-scrollbar-thumb {
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    background:rgba(15, 15, 15, 0.2);
+   padding-right:15px;
+}
+
+.slidebar::-webkit-scrollbar-thumb:hover {
+    background:rgba(14, 13, 13, 0.4); 
+  padding-right:15px;
+}
+
+.slidebar::-webkit-scrollbar-thumb:window-inactive {
+    background:rgba(0,0,0,0.05);
+   padding-right:15px;
+}
+.app{
+  position:absolute;
+  right:100px;
+  width:50px;
+  height:50px;
+  border-radius:25px;
+  background:rgba(255,255,255,0.4);
+  z-index:99999;
+  color:black;
+  font-size:30px;
+}
+.app:hover{
+  background:white;
+  
+}
+
+.blankey{
+  height:200px;
+}
+/*
+.frontslide::-webkit-scrollbar {
+    width:9px;
+ 
+}
+
+.frontslide::-webkit-scrollbar-track {
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    background:rgba(255,255,255,0.1);
+ 
+}
+
+.frontslide::-webkit-scrollbar-thumb {
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    background:rgba(255,255,255,0.2);
+ 
+}
+
+.frontslide::-webkit-scrollbar-thumb:hover {
+    background:rgba(255,255,255,0.4);
+ 
+}
+
+.frontslide::-webkit-scrollbar-thumb:window-inactive {
+    background:rgba(255,255,255,0.05);
+ 
+} */
+
+/* Test are above here */
+
+
+html {
+  
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.4;
+  overflow:auto;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+
+
+h1 {
+  color: #fff;
+  font-family: "Audiowide", cursive;
+  font-size: 2em;
+  font-size: 6vw;
+  line-height: 1.2;
+  margin: 0.5em 0 3em;
+  text-shadow: 1px 1px 1px #333;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: scroll;
+  background: #120103;
+  color: #fff;
+  text-align: center;
+}
+
+header {
+  
+  /* box-shadow: 0 .5em 1em #111; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+}
+header label {
+  background:#000000;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 4.25em;
+  font-size: .75em;
+  font-weight: bold;
+  padding: 0 1em;
+}
+
+header label:hover {
+  background: none;
+  stroke-width: 5;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+  -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.frontslide {
+  height: 100%;
+  width: 80%;
+  margin-left:10%;
+  position: relative;
+  top: 0;
+  right: 0;
+  overflow-y: scroll;
+  z-index: 99999;
+  padding: 8em 1em 1em 1em;
+  background-color: #120103;
+  background-position: 50% 50%;
+  background-size: cover;
+  -webkit-transition: left 0s .75s;
+  transition: left 0s .75s;
+}
+
+.slide {
+  height: 100%;
+  width: 80%;
+  margin-left:10%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  overflow: scroll;
+  z-index: 10;
+  padding: 8em 1em 0;
+  background-color: #120103;
+  background-position: 50% 50%;
+  background-size: cover;
+  -webkit-transition: left 0s .75s;
+  transition: left 0s .75s;
+}
+
+.slide-two {
+  background-image: url("project-fiora.jpg");
+  color:rgb(8, 8, 8);
+}
+.slide-three {
+  background-image: url("Bard_6.jpg");
+}
+.slide-four {
+  background-image: url("https://cdn2.mhpbooks.com/2017/05/Background-forest.jpg");
+}
+.slide h1 {
+  opacity: 0;
+  -ms-transform:translateY(100%);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: opacity .5s, -webkit-transform .5s .5s;
+  transition: opacity .5s, -webkit-transform .5s .5s;
+  transition: transform .5s .5s, opacity .5s;
+  transition: transform .5s .5s, opacity .5s, -webkit-transform .5s .5s;
+}
+
+[id^="slide"]:checked + .slide {
+  left: 0;
+  z-index: 100;
+  -webkit-transition: left .65s ease-out;
+  transition: left .65s ease-out;
+}
+[id^="slide"]:checked + .slide h1 {
+  opacity: 1;
+  -ms-transform:translateY(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all .5s .5s;
+  transition: all .5s .5s;
+}
+
+canvas{width:100%;height:100% !important;padding:0;margin:0;}
+		canvas{
+			position: fixed;
+			top:0;
+			left:0;
+			z-index: 30;
+			background: linear-gradient(
+      rgba(0, 191, 255, 0.1), 
+      rgba(0, 0, 0, 0.6)
+    ), url(zedper.gif) center center / cover;
+		}
+
+@media screen and (min-width:1px) and (max-width:499px){
+  canvas{
+    position:absolute;
+  }
+}
+
+		body:after{
+			content:"";
+			display: block;
+			position: relative;
+			top:0;
+			left:0;
+			bottom: 0;
+			right: 0;
+			z-index: 50;
+			background: url() center center / cover;
+		}
+		#scene1{-webkit-filter: blur(3px);z-index:20;}
+
+.cover {
+  text-align:center;
+  font-family: sans-serif;
+  max-width:800px;
+}
+
+section {
+  text-align:center;
+}
+
+.bookname{
+  color:white;
+  font-family:'anton', sans-serif;
+  letter-spacing:25px;
+  font-size:15vh;
+  line-height:20vh;
+  padding-top:8vh;
+  position:relative;
+  z-index: 1000;
+}
+
+.redcoat{
+  position:relative;
+  color:white;
+  font-family:'PT Sans Narrow',sans-serif;
+  font-size: 25px;
+  font-variant:small-caps;
+  z-index:5000;
+}
+
+article {
+  color: white;
+   font-family:'PT Sans Narrow',sans-serif;
+  font-size:20px;
+  z-index:50;
+  position:relative;
+}
+
+.excerpt{
+  color:#ccffff;
+  text-align: left;
+  padding-left:15vw;
+  padding-right:15vw;
+  padding-bottom:15vh;
+  
+}
+
+.btn {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 45px;
+  margin: 0 auto 2em;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+@media (min-width: 400px) {
+  .btn {
+    display: inline-block;
+    margin-right: 2.5em;
+  }
+  .btn:nth-of-type(even) {
+    margin-right: 0;
+  }
+}
+@media (min-width: 600px) {
+  .btn:nth-of-type(even) {
+    margin-right: 2.5em;
+  }
+  .btn:nth-of-type(5) {
+    margin-right: 0;
+  }
+}
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn-1 {
+  background: #e02c26;
+  font-weight: 100;
+  z-index:1000;
+}
+.btn-1 svg {
+  height: 45px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.btn-1 rect {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 422, 0;
+}
+
+.btn-1:hover {
+  background: rgba(225, 51, 45, 0);
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+.btn-1:hover rect {
+  stroke-width: 5;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+  -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.kern{
+  letter-spacing:20px;
+}
+.kern2{
+  letter-spacing:17px;
+}
+
+.sellbutton{
+  max-width:200px;
+}
+.buy{
+  max-width:500px;
+  margin:auto;
+  color:black;
+}
+.featured-press {
+  color:black;
+  max-width:800px;
+  margin: auto;
+}
+
+.featured-press p{
+  padding:10px;
+}
+h4{
+  color:black;
+}
+
+.floater{
+  max-width:300px;
+  float:right;
+}
+
+.floater img{
+  max-width:300px;
+}
+
+figcaption{
+   
+}
+/* Hide the player control bar */
+.video-js .vjs-control-bar {
+  display: none;
+}
+/* Remove click events on the player */
+.video-js {
+  pointer-events: none;
+}
+body {
+  background-color: #111;
+  color: #fff;
+}
+/*
+ * Styles essential to the sample
+ * are below
+ */
+/* Style the player */
+body {
+  margin: 0;
+  background-color: black;
+}
+/*contact*
+
+
+
+
